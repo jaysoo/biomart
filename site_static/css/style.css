@@ -224,7 +224,7 @@ Copyright }
     margin-right: 20px;
 }
 #collaborators a {
-    opacity: .6;
+    opacity: .5;
     -webkit-transition: opacity .3s ease-in-out;
     -moz-transition: opacity .3s ease-in-out;
     -o-transition: opacity .3s ease-in-out;
