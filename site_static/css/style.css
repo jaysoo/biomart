@@ -69,8 +69,6 @@ button {  width: auto; overflow: visible; }
 
 body, select, input, textarea { color: #444; }
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
-a, a:active, a:visited { color: #607890; }
-a:hover { color: #036; }
 
 
 /**
@@ -92,6 +90,12 @@ a {
     -ms-transition: color .3s ease-out;
     -o-transition: color .3s ease-out;
     transition: color .3s ease-out;
+}
+a, a:active, a:visited {
+    color: #3a7940;
+}
+a:hover {
+    color: #8ec54d;
 }
 
 .container {
