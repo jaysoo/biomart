@@ -34,17 +34,22 @@
     </div>
   </header>
   <div id="main" role="main">
-    <div class="container">
+    <div class="container clearfix">
       {% block content %}{% endblock %}
     </div>
   </div>
   <footer class="clearfix">
-    <div class="container">
-      {% include "collaborators.html" %}
-      <section id="copyright">
-        &copy; {% now "Y" %} Ontario Institute for Cancer Reseach
-      </section>
-    </div>
+    <section id="external">
+      <div class="container clearfix">
+        {% include "collaborators.html" %}
+        {% include "thirdparty.html" %}
+      </div>
+    </section>
+    <section id="copyright">
+      <div class="container">
+        Copyright &copy; {% now "Y" %} Ontario Institute for Cancer Reseach
+      </div>
+    </section>
   </footer>
 
 
