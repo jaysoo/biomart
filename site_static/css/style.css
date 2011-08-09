@@ -164,6 +164,7 @@ nav {
     left: 50%;
     z-index: 100;
     text-align: center;
+    line-height: 1.8;
 }
 #nav li {
     display: inline;
@@ -305,19 +306,23 @@ footer h4 {
         border-top: 1px solid #ccc;
     }
     header { height: auto; margin-bottom: 20px; }
-    nav { 
-        width: 90%;
-        position: static;
-        margin: 0 auto;
-    }
     hgroup { 
         position: static;
         margin-top: 30px;
+        padding: 0 3px;
+    }
+    nav { 
+        width: 100%;
+        border-radius: 0;
+        position: static;
+        margin: 0 auto;
+        padding: 0;
     }
     #nav {
         left: 0;
         margin-left: 0;
     }
+    header .container { width: 100%; padding: 0; }
 }
 @media all and (min-width: 800px) {
     .container { width: 794px; }
@@ -328,18 +333,22 @@ footer h4 {
         left: 0;
         top: 0;
         width: 800px;
+        border-radius: 0 0 8px 8px;
+        padding: 5px 10px;
     }
     #nav {
         left: 50%;
         margin-left: -50%;
     }
     hgroup {
+        padding: 0 3px;
         padding-top: 50px;
     }
+    header .container { padding: 0 3px; }
 }
 @media all and (min-width: 1180px) {
-    .container { width: 1174px; }
-    .col-a { width: 700px; }
+    .container { width: 1154px; }
+    .col-a { width: 680px; }
     .col-b { width: 400px; }
     header { height: 100px; }
     hgroup { padding-top: 10px; }
