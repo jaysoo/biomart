@@ -337,7 +337,7 @@ footer h4 {
         padding-top: 50px;
     }
 }
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1180px) {
     .container { width: 1174px; }
     .col-a { width: 700px; }
     .col-b { width: 400px; }
