@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="overview">
-  <h3>Project Overview</h3>
-
-  {{ project_overview|linebreaks }}
+  {{ project_overview|safe }}
 </div>
 <div id="news">
   <h3>Latest News</h3>

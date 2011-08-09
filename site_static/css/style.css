@@ -173,19 +173,20 @@ nav {
 }
 
 #main {
-    padding: 30px 0;
+    padding: 20px 0;
     line-height: 1.5em;
 }
 #main p {
     margin-bottom: 1em;
 }
+#main h2,
 #main h3 {
     border-left: 5px solid #444;
     padding-left: 5px;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: normal;
-    margin-bottom: 1em;
+    margin: 1em 0;
 }
 
 /* Footer */
