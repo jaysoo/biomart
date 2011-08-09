@@ -67,7 +67,7 @@ STATIC_URL = '/static/'
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'grappelli/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -103,6 +103,17 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.static',
+    'django.core.context_processors.media',
+    'django.core.context_processors.request',
+    'context_processors.domain',
+    'context_processors.title_and_tagline',
+)
+
 ROOT_URLCONF = 'biomart.urls'
 
 TEMPLATE_DIRS = (
@@ -116,10 +127,18 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.admin',
     'django.contrib.flatpages',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+
+    # Jazzified admin
+    'grappelli',
+    'filebrowser',
+    'django.contrib.admin',
+
+    # Third-party apps
+    'south',
+
+    # BioMart apps
+    'core',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -145,8 +164,13 @@ LOGGING = {
     }
 }
 
+
+GRAPPELLI_ADMIN_TITLE = 'BioMart Dashboard'
+
 # Try to load local settings
 try:
     from local_settings import *
 except ImportError:
     pass
+
+

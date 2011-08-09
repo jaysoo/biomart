@@ -61,9 +61,9 @@ input:invalid, textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 5
 .no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
 
 
-::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-::selection { background:#FF5E99; color:#fff; text-shadow: none; }
-a:link { -webkit-tap-highlight-color: #FF5E99; }
+::-moz-selection{ background: #5e9966; color:#fff; text-shadow: none; }
+::selection { background:#5e9966; color:#fff; text-shadow: none; }
+a:link { -webkit-tap-highlight-color: #5e9966; }
 button {  width: auto; overflow: visible; }
 .ie7 img { -ms-interpolation-mode: bicubic; }
 
@@ -174,6 +174,7 @@ nav {
 
 #main {
     padding: 30px 0;
+    line-height: 1.5em;
 }
 #main p {
     margin-bottom: 1em;
@@ -214,7 +215,7 @@ Copyright }
     line-height: 40px;
 }
 #thirdparty li:after {
-    content: " · ";
+    content: " \2022 ";
 }
 #thirdparty li:last-child:after {
     content: "";
@@ -252,16 +253,31 @@ Copyright }
 }
 #news {
     float: right;
-    width: 300px;
+    width: 400px;
 }
 #news li {
     border-bottom: 1px dotted #ccc;
     padding-bottom: 5px;
     margin-bottom: 5px;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
-
-
-
+#news time {
+    background-color: #444;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #ddd;
+    padding: 2px 5px;
+    overflow: hidden;
+}
+#news .headline:before {
+    content: "\0020";
+}
+#news .more {
+    margin-top: 10px;
+}
 
 
 

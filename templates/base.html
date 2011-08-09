@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>BioMart</title>
+  <title>{{ SITE_TITLE }} &mdash; {{ SITE_TAGLINE }}</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -24,9 +24,9 @@
     <div class="container">
       <hgroup>
         <a href="{% url home %}">
-          <h1 id="main-logo" class="ir">BioMart</h1>
+          <h1 id="main-logo" class="ir">{{ SITE_TITLE }}</h1>
         </a>
-        <h2 id="tagline">Lorem ipsum</h2>
+        <h2 id="tagline">{{ SITE_TAGLINE }}</h2>
       </hgroup>
       <nav role="navigation">
         {% include "nav.html" %}
