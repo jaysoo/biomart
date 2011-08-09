@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load cache %}
+
+{% block head_title %}{{ flatpage.title }} &mdash; {{ block.super }}{% endblock %}
+
+{% block content %}
+  <h2>{{ flatpage.title }}</h2>
+  <div class="content">
+    {{ flatpage.content|safe }}
+  </div>
+{% endblock %}

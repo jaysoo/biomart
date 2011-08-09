@@ -1,8 +1,10 @@
 {% extends "base.html" %}
+
 {% block content %}
-<div id="overview">
   {{ project_overview|safe }}
-</div>
+{% endblock %}
+
+{% block aside %}
 <div id="news">
   <h3>Latest News</h3>
   <ul>
