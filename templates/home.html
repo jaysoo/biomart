@@ -5,49 +5,17 @@
 {% endblock %}
 
 {% block aside %}
+{% load news humanize %}
+{% get_latest_articles 10 as articles %}
 <div id="news">
   <h3>Latest News</h3>
   <ul>
+    {% for article in articles %}
     <li>
-      <time datetime="2011-05-10T00:00:00Z" pubdate>May 10th, 2011</time>
-      <span class="headline"><a href="#">BioMart v 0.8 rc6</a></span>
+    <time datetime="{{ article.pub_date|date:"c" }}" pubdate>{{ article.pub_date|naturalday }}</time>
+    <span class="headline"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></span>
     </li>
-    <li>
-      <time datetime="2011-03-11T00:00:00Z" pubdate>Mar 11th, 2011</time>
-      <span class="headline"><a href="#">BioMart v 0.8 rc5</a></span>
-    </li>
-    <li>
-      <time datetime="2011-02-01T00:00:00Z" pubdate>Feb 1st, 2011</time>
-      <span class="headline"><a href="#">BioMart v 0.8 rc4</a></span>
-    </li>
-    <li>
-      <time datetime="2011-02-01T00:00:00Z" pubdate>Feb 1st, 2011</time>
-      <span class="headline"><a href="#">BioMart v 0.8 rc4</a></span>
-    </li>
-    <li>
-      <time datetime="2011-02-01T00:00:00Z" pubdate>Feb 1st, 2011</time>
-      <span class="headline"><a href="#">BioMart v 0.8 rc4</a></span>
-    </li>
-    <li>
-      <time datetime="2011-02-01T00:00:00Z" pubdate>Feb 1st, 2011</time>
-      <span class="headline"><a href="#">BioMart v 0.8 rc4</a></span>
-    </li>
-    <li>
-      <time datetime="2011-02-01T00:00:00Z" pubdate>Feb 1st, 2011</time>
-      <span class="headline"><a href="#">BioMart v 0.8 rc4</a></span>
-    </li>
-    <li>
-      <time datetime="2011-02-01T00:00:00Z" pubdate>Feb 1st, 2011</time>
-      <span class="headline"><a href="#">BioMart v 0.8 rc4</a></span>
-    </li>
-    <li>
-      <time datetime="2011-02-01T00:00:00Z" pubdate>Feb 1st, 2011</time>
-      <span class="headline"><a href="#">BioMart v 0.8 rc4</a></span>
-    </li>
-    <li>
-      <time datetime="2011-02-01T00:00:00Z" pubdate>Feb 1st, 2011</time>
-      <span class="headline"><a href="#">This is a really, really long headline. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></span>
-    </li>
+    {% endfor %}
   </ul>
   <p class="more">
     <a href="#">See more news &raquo;</a>

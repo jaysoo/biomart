@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.flatpages',
+    'django.contrib.humanize',
 
     # Jazzified admin
     'grappelli',
@@ -141,6 +142,7 @@ INSTALLED_APPS = (
 
     # BioMart apps
     'core',
+    'news',
 )
 
 # A sample logging configuration. The only tangible logging
