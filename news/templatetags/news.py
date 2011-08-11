@@ -48,7 +48,7 @@ class ArticleMonths(template.Node):
         self.var_name = var_name
 
     def render(self, context):
-        months = Article.objects.dates('publish', 'month')
+        months = Article.objects.dates('pub_date', 'month').order_by('-pub_date')
         context[self.var_name] = months
         return ''
 

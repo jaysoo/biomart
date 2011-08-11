@@ -1,8 +1,8 @@
+{% load core %}
+{% get_navigation top as navigation %}
+
 <ul id="nav"> 
-  <li><a href="/biomart/">Data Portal</a></li> 
-  <li><a href="/download/">Download</a></li> 
-  <li><a href="/docs/">Documentation</a></li> 
-  <li><a href="/about/">About</a></li> 
-  <li><a href="/news/">News</a></li> 
-  <li><a href="/support/">Support</a></li> 
+{% for item in navigation.get_items %}
+  <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+{% endfor %}
 </ul> 
