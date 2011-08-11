@@ -1,5 +1,7 @@
 {% extends "news/news_base.html" %}
 
+{% block head_title %}{{ block.super }} &raquo; {{ object.title }}{% endblock %}
+
 {% block content %}
   <article>
     <h2>{{ object.title }}</h2>

@@ -1,0 +1,12 @@
+{% load news %}
+
+{% get_months as months %}
+
+<h3>Archives</h3>
+<ul>
+  {% for month in months %}
+  <li>
+    <a href="{% url news_archive_month year=month|date:"Y" month=month|date:"m" %}">{{ month|date:"F Y" }}</a>
+  </li>
+  {% endfor %}
+</ul>

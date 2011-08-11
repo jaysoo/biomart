@@ -1,0 +1,15 @@
+{% extends "news/news_base.html" %}
+
+{% block content %}
+  <h2>News articles for {{ month|date:"F Y" }}</h2>
+  <div class="article_list">
+    {% for article in object_list %}
+    <div>
+      <h3 class="title"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+      <p><time pubdate datetime="{{ object.pub_date|date:"c" }}">{{ object.pub_date|date:"F j, Y" }}</p>
+      <p class="tease">{{ article.body|truncatewords_html:100|striptags }}</p>
+      <p class="more"><a href="{{ article.get_absolute_url }}">Continue reading &raquo;</a></p>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
