@@ -9,10 +9,13 @@ def domain(request):
 
 def title_and_tagline(request):
     site = Site.objects.get_current()
-    settings = Settings.objects.get(site=site)
-    return {
-        'SITE_TITLE': settings.title,
-        'SITE_TAGLINE': settings.tagline
-    }
+    try:
+        settings = Settings.objects.get(site=site)
+        return {
+            'SITE_TITLE': settings.title,
+            'SITE_TAGLINE': settings.tagline
+        }
+    except:
+        return {}
 
 

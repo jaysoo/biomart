@@ -16,3 +16,7 @@ urlpatterns = patterns('',
 if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()  
     urlpatterns += patterns('', (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}))
+    urlpatterns += patterns('', (r'^(?P<path>ie-css3.htc)?$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}))
+    urlpatterns += patterns('', (r'^(?P<path>humans.txt)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}))
+    urlpatterns += patterns('', (r'^(?P<path>robots.txt)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}))
+    urlpatterns += patterns('', (r'^(?P<path>favicon.ico)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}))
