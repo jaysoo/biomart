@@ -13,7 +13,7 @@ class LatestArticles(template.Node):
         self.var_name = var_name
 
     def render(self, context):
-        articles = Article.objects.published()[:self.limit]
+        articles = Article.objects.published().order_by('-pub_date')[:self.limit]
         if articles and (self.limit == 1):
             context[self.var_name] = articles[0]
         else:
@@ -55,8 +55,6 @@ class ArticleMonths(template.Node):
 @register.tag
 def get_months(parser, token):
     """
-    Gets any number of latest articles and stores them in a varable.
-
     Syntax::
 
         {% get_months as [var_name] %}

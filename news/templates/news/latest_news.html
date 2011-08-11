@@ -1,0 +1,15 @@
+{% load news humanize %}
+{% get_latest_articles 10 as articles %}
+<div id="latest-news">
+  <h3>Latest News</h3>
+  <ul>
+    {% for article in articles %}
+    <li>
+      <time datetime="{{ article.pub_date|date:"c" }}" pubdate>{{ article.pub_date|naturalday }}</time>
+      <span class="headline"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></span>
+      <p class="blurb">{{ article.body|truncatewords_html:20|striptags }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+

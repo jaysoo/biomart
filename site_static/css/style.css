@@ -259,11 +259,11 @@ footer h4 {
 
 
 /* Home */
-#news {
+#latest-news {
     /* This is for the ie-css3.htc script */
     position: relative;
 }
-#news li {
+#latest-news li {
     border-bottom: 1px dotted #ccc;
     padding-bottom: 5px;
     margin-bottom: 5px;
@@ -272,7 +272,7 @@ footer h4 {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-#news time {
+#latest-news time {
     background-color: #444;
     font-size: 12px;
     color: #ddd;
@@ -281,10 +281,13 @@ footer h4 {
     border-radius: 8px;
     behavior: url(ie-css3.htc);
 }
-#news .headline:before {
+#latest-news .headline:before {
     content: "\0020";
 }
-#news .more {
+#latest-news .blurb {
+    white-space: normal;
+}
+#latest-news .more {
     margin-top: 10px;
 }
 

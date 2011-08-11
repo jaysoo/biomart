@@ -7,18 +7,8 @@
 {% block aside %}
 {% load news humanize %}
 {% get_latest_articles 10 as articles %}
-<div id="news">
-  <h3>Latest News</h3>
-  <ul>
-    {% for article in articles %}
-    <li>
-    <time datetime="{{ article.pub_date|date:"c" }}" pubdate>{{ article.pub_date|naturalday }}</time>
-    <span class="headline"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></span>
-    </li>
-    {% endfor %}
-  </ul>
+  {% include "news/latest_news.html" %}
   <p class="more">
     <a href="#">See more news &raquo;</a>
   </p>
-</div>
 {% endblock %}
