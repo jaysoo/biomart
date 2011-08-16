@@ -171,6 +171,16 @@ LOGGING = {
 
 GRAPPELLI_ADMIN_TITLE = 'BioMart Dashboard'
 
+FILEBROWSER_EXTENSIONS =  {
+    'Image': ['.jpg','.jpeg','.gif','.png','.tif','.tiff'],
+    'Document': ['.pdf','.doc','.rtf','.txt','.xls','.csv','.docx'],
+    'Video': ['.mov','.wmv','.mpeg','.mpg','.avi','.rm'],
+    'Audio': ['.mp4','.mp4','.wav','.aiff','.midi','.m4p'],
+    'Presentations': ['.ppt','.pptx'],
+}
+
+FILEBROWSER_MAX_UPLOAD_SIZE = 20971520 
+
 # Try to load local settings
 try:
     from local_settings import *
