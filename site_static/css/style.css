@@ -397,7 +397,7 @@ footer ul {
 }
 @media all and (min-width: 1180px) {
     .container { width: 1154px; }
-    .col-a { width: 680px; }
+    .col-a { width: 710px; }
     .col-b { width: 400px; }
     hgroup { padding-top: 10px; }
     nav { right: 0; left: auto; }
