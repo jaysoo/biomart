@@ -195,6 +195,10 @@ nav {
     font-weight: normal;
     margin: 1em 0;
 }
+#main img {
+    max-width: 100%;
+    height: auto;
+}
 
 /* Footer */
 footer h4 {
