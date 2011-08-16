@@ -182,6 +182,7 @@ nav {
 #main {
     padding: 20px 0;
     line-height: 1.5em;
+    text-align: justify;
 }
 #main p {
     margin-bottom: 1em;
@@ -337,13 +338,12 @@ footer ul {
         float: none;
         width: 100%;
         overflow: auto;
-        margin: 20px 0;
     }
     .col-b {
         padding-top: 20px;
         border-top: 1px solid #ccc;
     }
-    header { height: auto; margin-bottom: 20px; }
+    header { height: auto;  }
     hgroup { 
         position: static;
         margin-top: 30px;
@@ -395,7 +395,6 @@ footer ul {
     .container { width: 1154px; }
     .col-a { width: 680px; }
     .col-b { width: 400px; }
-    header { height: 100px; }
     hgroup { padding-top: 10px; }
     nav { right: 0; left: auto; }
 }
