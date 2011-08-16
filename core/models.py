@@ -24,8 +24,22 @@ class Navigation(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = 'navigation'
+
 class NavItem(models.Model):
     navigation = models.ForeignKey(Navigation)
     label = models.CharField(_('label'), max_length=100)
-    url = models.CharField(_('url'), max_length=100)
+    url = models.CharField(_('URL'), max_length=100)
     display_order = models.IntegerField(help_text=_('Order that items will be displayed'))
+
+class ThirdPartySoftware(models.Model):
+    name = models.CharField(_('name'), max_length=100)
+    url = models.URLField(_('URL'), max_length=100)
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'third party software'
+

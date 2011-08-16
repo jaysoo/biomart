@@ -1,4 +1,4 @@
-from core.models import Settings, Navigation, NavItem
+from core.models import Settings, Navigation, NavItem, ThirdPartySoftware
 from django.contrib import admin
 from django.conf import settings
 from django.contrib.flatpages.models import FlatPage
@@ -19,6 +19,12 @@ class NavigationAdmin(admin.ModelAdmin):
     inlines = (NavItemInline,)
 
 admin.site.register(Navigation, NavigationAdmin)
+
+class ThirdPartySoftwareAdmin(admin.ModelAdmin): 
+    list_display = ('name', 'url')
+    ordering = ('name', 'url')
+
+admin.site.register(ThirdPartySoftware, ThirdPartySoftwareAdmin)
 
 class SettingsAdmin(admin.ModelAdmin): 
     class Media: 
