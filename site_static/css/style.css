@@ -250,7 +250,7 @@ footer ul {
 }
 
 
-/* Home */
+/* Sidebar */
 #latest-news {
     /* This is for the ie-css3.htc script */
     position: relative;
@@ -288,6 +288,29 @@ footer ul {
     margin-top: 10px;
 }
 
+/* News */
+#news .article-list article {
+    border-bottom: 1px dotted #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+#news .article-list article:last-child {
+    border-bottom: none;
+}
+#news .article-list h3 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+#news .article-list h3 a {
+    text-decoration: none;
+}
+#news article .time {
+    margin-top: 0;
+}
+#news article time {
+    color: #999;
+}
 
 
 

@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-from django.utils.text import truncate_words
+from django.utils.text import truncate_html_words
+from django.utils.safestring import mark_safe
 from django.db.models import permalink
 
 from managers import PublicManager
@@ -29,8 +30,12 @@ class Article(models.Model):
             'slug': self.slug
         })
 
+    def _get_safe_body(self):
+        return mark_safe(self.body)
+    safe_body = property(_get_safe_body)
+
     def _get_blurb(self):
-        return truncate_words(self.body, 100)
+        return mark_safe( truncate_html_words(self.body, 100) )
     blurb = property(_get_blurb)
 
     def __unicode__(self):

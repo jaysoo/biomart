@@ -2,6 +2,8 @@
 
 {% block head_title %}{{ block.super }} &raquo; News{% endblock %}
 
+{% block body_id %}news{% endblock %}
+
 {% block aside %}
   {% include "news/latest_news.html" %}
   {% include "news/archive.html" %}

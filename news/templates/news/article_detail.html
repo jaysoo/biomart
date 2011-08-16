@@ -5,7 +5,7 @@
 {% block content %}
   <article>
     <h2>{{ object.title }}</h2>
-    <p><time pubdate datetime="{{ object.pub_date|date:"c" }}">{{ object.pub_date|date:"F j, Y" }}</p>
+    <p class="time"><time pubdate datetime="{{ object.pub_date|date:"c" }}">{{ object.pub_date|date:"F j, Y" }}</p>
     <div class="body">
       {{ object.body|safe }}
     </div>
