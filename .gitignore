@@ -4,3 +4,4 @@
 *.swp
 static
 media
+biomart*.json
