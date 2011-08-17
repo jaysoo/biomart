@@ -3,6 +3,6 @@
 
 <ul id="nav"> 
 {% for item in navigation.get_items %}
-  <li><a href="//{{ DOMAIN }}{{ item.url }}">{{ item.label }}</a></li>
+  <li><a href="{{ item.url }}">{{ item.label }}</a></li>
 {% endfor %}
 </ul> 
