@@ -7,7 +7,7 @@
 {% block aside %}
 {% load news humanize %}
 {% get_latest_articles 10 as articles %}
-  {% include "news/latest_news.html" %}
+  {% include "news/_latest_news.html" %}
   <p class="more">
     <a href="/news/">See more news &raquo;</a>
   </p>

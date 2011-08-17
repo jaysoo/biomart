@@ -2,7 +2,7 @@ import os
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -114,6 +114,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
     'context_processors.domain',
     'context_processors.title_and_tagline',
+    'context_processors.disqus',
 )
 
 ROOT_URLCONF = 'biomart.urls'
@@ -180,6 +181,9 @@ FILEBROWSER_EXTENSIONS =  {
 }
 
 FILEBROWSER_MAX_UPLOAD_SIZE = 20971520 
+
+DISQUS_ID = 'biomart'
+DISQUS_DEBUG = False
 
 # Try to load local settings
 try:

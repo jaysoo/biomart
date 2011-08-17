@@ -3,13 +3,10 @@
 
 {% block content %}
   <h2>Articles for {{ month|date:"F Y" }}</h2>
-  <div class="article-list">
-    {% for article in object_list %}
-    <article>
-      <h3 class="title"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
-      <p class="time"><time pubdate datetime="{{ object.pub_date|date:"c" }}">{{ object.pub_date|date:"F j, Y" }}</p>
-      <p class="tease">{{ article.safe_body }}</p>
-    </article>
-    {% endfor %}
-  </div>
+  {% include "news/_articles.html" %}
 {% endblock %}
+
+{% block body_end %}
+  {% include "news/_disqus_count.html" %}
+{% endblock %}
+

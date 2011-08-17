@@ -5,3 +5,4 @@
 static
 media
 biomart*.json
+local_settings.py
