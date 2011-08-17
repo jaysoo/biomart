@@ -3,9 +3,11 @@
 
 {% block head_title %}{{ block.super }} &raquo; {{ flatpage.title }}{% endblock %}
 
+{% block body_id %}flatpage{% endblock %}
+
 {% block content %}
-  <h2>{{ flatpage.title }}</h2>
-  <div class="content">
+  <h2 class="top-header">{{ flatpage.title }}</h2>
+  <article>
     {{ flatpage.content|safe }}
-  </div>
+  </article>
 {% endblock %}
