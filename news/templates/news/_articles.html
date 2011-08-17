@@ -4,7 +4,9 @@
     <h3 class="title"><a href="//{{ DOMAIN }}{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
     <p class="time"><time pubdate datetime="{{ article.pub_date|date:"c" }}">{{ article.pub_date|date:"l, F j, Y" }}</p>
     <p class="tease">{{ article.safe_body }}</p>
-    <a href="http://{{ DOMAIN }}{{ article.get_absolute_url }}#disqus_thread" data-disqus-identifier="article_{{ article.pk }}">Comments</a>
+    <p class="article-comments-link">
+      <a href="http://{{ DOMAIN }}{{ article.get_absolute_url }}#disqus_thread" data-disqus-identifier="article_{{ article.pk }}">Comments</a>
+    </p>
   </article>
   {% endfor %}
 </div>

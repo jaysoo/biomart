@@ -321,6 +321,16 @@ footer ul {
     padding-top: 10px;
     border-top: 1px solid #ccc;
 }
+#news .article-comments-link:before {
+    font-size: 20px;
+    color: #999;
+    content: "{";
+}
+#news .article-comments-link:after {
+    font-size: 20px;
+    color: #999;
+    content: "}";
+}
 
 .ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
 .hidden { display: none; visibility: hidden; }
