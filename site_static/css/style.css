@@ -4,7 +4,7 @@ audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-body { margin: 0; font-size: 13px; line-height: 1.231; }
+body { margin: 0; font-size: 14px; line-height: 1.231; }
 body, button, input, select, textarea { font-family: sans-serif; color: #444; }
 
 ::-moz-selection{ background: #5e9966; color:#fff; text-shadow: none; }
@@ -83,6 +83,9 @@ a, a:active, a:visited {
 }
 a:hover {
     color: #8ec54d;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 2em 0 1em 0;
 }
 
 /* Main layout */
@@ -180,7 +183,7 @@ nav {
 }
 
 #main {
-    padding: 20px 0;
+    padding: 10px 0;
     line-height: 1.5em;
     text-align: justify;
 }
@@ -375,6 +378,7 @@ footer ul {
     #nav {
         left: 0;
         margin-left: 0;
+        text-align: left;
     }
     header .container { width: 100%; padding: 0; }
 }
@@ -393,9 +397,10 @@ footer ul {
     #nav {
         left: 50%;
         margin-left: -50%;
+        text-align: center;
     }
     hgroup {
-        padding: 50px 3px 0 3px;
+        padding: 50px 3px 0;
     }
     header .container { padding: 0 3px; }
 }

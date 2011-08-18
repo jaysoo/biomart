@@ -35,6 +35,7 @@
     </div>
   </header>
   <div id="main" role="main">
+    {% block container %}
     <div class="container clearfix">
       <div class="content col-a">
         {% block content %}{% endblock %}
@@ -44,6 +45,7 @@
         {% endblock %}
       </aside>
     </div>
+    {% endblock %}
   </div>
   <footer class="clearfix">
     <section id="external">
