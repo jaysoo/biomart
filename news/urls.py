@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 import views as views
+from feeds import ArticlesFeed
 
 urlpatterns = patterns('',
 
@@ -34,4 +35,6 @@ urlpatterns = patterns('',
     url(r'^$',
         view=views.article_list,
         name='news_index'),
+
+    (r'^feed/$', ArticlesFeed()),
 )
