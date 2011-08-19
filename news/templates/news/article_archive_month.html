@@ -1,5 +1,5 @@
 {% extends "news/news_base.html" %}
-{% block head_title %}{{ block.super}} &raquo; Articles for {{ month|date:"F Y" }} {% endblock %}
+{% block head_title %}Articles for {{ month|date:"F Y" }} &mdash; {{ block.super}}{% endblock %}
 
 {% block content %}
   <h2>Articles for {{ month|date:"F Y" }}</h2>

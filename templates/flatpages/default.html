@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load cache %}
 
-{% block head_title %}{{ block.super }} &raquo; {{ flatpage.title }}{% endblock %}
+{% block head_title %}{{ flatpage.title }} &mdash; {{ block.super }}{% endblock %}
 
 {% block body_id %}flatpage{% endblock %}
 
