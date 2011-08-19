@@ -17,3 +17,8 @@ class ArticlesFeed(Feed):
 
     def item_pubdate(self, obj):
         return obj.pub_date
+
+    def item_description(self, obj):
+        return obj.body
+
+
