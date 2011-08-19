@@ -421,8 +421,11 @@ footer ul {
     .container { width: 1154px; }
     .col-a { width: 710px; }
     .col-b { width: 400px; }
-    hgroup { padding-top: 10px; }
-    nav { right: 0; left: auto; }
+    nav {
+        width: 1140px;
+    }
+    /*hgroup { padding-top: 10px; }
+    nav { right: 0; left: auto; }*/
 }
 
 
