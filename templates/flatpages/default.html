@@ -5,11 +5,13 @@
 
 {% block body_id %}flatpage{% endblock %}
 
-{% block container %}
-  <div class="container container-noaside">
+{% block content %}
     <h2 class="top-header">{{ flatpage.title }}</h2>
     <article>
       {{ flatpage.content|safe }}
     </article>
-  </div>
+{% endblock %}
+
+{% block aside %}
+  {% include "news/_latest_news.html" %}
 {% endblock %}

@@ -42,6 +42,10 @@
       </div>
       <aside class="col-b">
         {% block aside %}
+          {% include "news/_latest_news.html" %}
+          <p class="more">
+            <a href="/news/">See more news &raquo;</a>
+          </p>
         {% endblock %}
       </aside>
     </div>
