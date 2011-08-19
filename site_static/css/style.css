@@ -258,7 +258,7 @@ footer ul {
     opacity: 1;
 }
 #copyright {
-    padding: 10px 0;
+    padding: 10px 0 30px;
     background-color: #1a1a1a;
     color: #ccc;
     font-size: 12px;
