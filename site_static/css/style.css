@@ -119,13 +119,15 @@ hgroup {
     background: transparent url(../images/biomart-logo.png) no-repeat 0 0;
     width: 200px;
     height: 61px;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 #tagline {
     font-weight: normal;
     color: #777;
     font-size: 16px;
     font-variant: small-caps;
-    margin-top: 5px;
+    margin-top: 7px;
 }
 
 /* Main nav */
@@ -402,7 +404,7 @@ footer ul {
         text-align: center;
     }
     hgroup {
-        padding: 50px 3px 0;
+        padding: 70px 3px 0;
     }
     header .container { padding: 0 3px; }
 }
@@ -410,6 +412,7 @@ footer ul {
     .container { width: 874px; }
     .col-a { width: 500px; float: left; overflow: visible; margin: 0; }
     .col-b { width: 330px; float: right; overflow: visible; margin: 0; border-top: none; padding-top: 0; }
+    hgroup { padding-top: 50px; }
     nav {
         width: 860px;
     }
