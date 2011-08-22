@@ -41,7 +41,7 @@ tinyMCE.init({
     theme_advanced_blockformats: "p,h2,h3,h4,h5,h6,blockquote,pre",
     width: '700',
     height: '200',
-    plugins: "pre,advimage,advlink,fullscreen,visualchars,paste,media,template,searchreplace",
+    plugins: "advimage,advlink,fullscreen,visualchars,paste,media,template,searchreplace",
     advimage_styles: "Linksbündig neben Text=img_left;Rechtsbündig neben Text=img_right;Eigener Block=img_block",
     advlink_styles: "internal (sehmaschine.net)=internal;external (link to an external site)=external",
     advimage_update_dimensions_onchange: true,
