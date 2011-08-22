@@ -91,10 +91,11 @@ a, img {
     outline: none !important;
 }
 pre {
+    font-size: 11px;
     margin: 0 20px;
     border: 1px dotted #999;
     background-color: #eee;
-    padding: 10px;
+    padding: 3px 5px;
 }
 
 /* Main layout */
