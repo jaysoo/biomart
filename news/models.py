@@ -5,6 +5,9 @@ from django.utils.text import truncate_html_words
 from django.utils.safestring import mark_safe
 from django.db.models import permalink
 
+from django.core.cache import cache
+from core.utils import create_cache_key
+
 from managers import PublicManager
 
 class Article(models.Model):
@@ -37,6 +40,20 @@ class Article(models.Model):
     def _get_blurb(self):
         return mark_safe( truncate_html_words(self.body, 100) )
     blurb = property(_get_blurb)
+
+    @staticmethod
+    def get_published():
+        key = create_cache_key(Article, field='type', field_value='published')
+        articles = cache.get(key, None)
+
+        if not articles:
+            try:
+                articles = Article.objects.published()[:20]
+                cache.add(key, articles)
+            except Article.DoesNotExist:
+                return None
+
+        return articles
 
     def __unicode__(self):
         return self.title

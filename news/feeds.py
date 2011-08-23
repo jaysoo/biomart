@@ -13,7 +13,7 @@ class ArticlesFeed(Feed):
         return reverse('news_index')
 
     def items(self):
-        return Article.objects.published()[:20]
+        return Article.get_published()
 
     def item_pubdate(self, obj):
         return obj.pub_date
