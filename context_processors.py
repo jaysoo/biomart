@@ -9,9 +9,8 @@ def domain(request):
     }
 
 def title_and_tagline(request):
-    site = Site.objects.get_current()
     try:
-        s = Settings.objects.get(site=site)
+        s = Settings.get_current()
         return {
             'SITE_TITLE': s.title,
             'SITE_TAGLINE': s.tagline

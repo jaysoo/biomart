@@ -16,8 +16,8 @@ class GetNavigation(template.Node):
     def render(self, context):
         if not self.name:
             self.name = 'top'
-        navigation = Navigation.objects.filter(name=self.name)[0]
-        context[self.var_name] = navigation
+        context[self.var_name] = Navigation.get_navigation(self.name)
+
         return ''
 
 @register.tag
@@ -47,7 +47,7 @@ class GetThirdPartySoftware(template.Node):
         self.var_name = var_name
 
     def render(self, context):
-        software = ThirdPartySoftware.objects.all().order_by('name')
+        software = ThirdPartySoftware.get_all()
         context[self.var_name] = software
         return ''
 
