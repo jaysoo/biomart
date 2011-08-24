@@ -48,7 +48,7 @@ class Article(models.Model):
 
         if not articles:
             try:
-                articles = Article.objects.published()[:20]
+                articles = Article.objects.published()
                 cache.add(key, articles)
             except Article.DoesNotExist:
                 return None
