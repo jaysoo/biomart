@@ -13,7 +13,7 @@ class LatestArticles(template.Node):
         self.var_name = var_name
 
     def render(self, context):
-        articles = Article.get_published().order_by('-pub_date')[:self.limit]
+        articles = Article.get_latest(self.limit)
         if articles and (self.limit == 1):
             context[self.var_name] = articles[0]
         else:

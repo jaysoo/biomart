@@ -15,7 +15,7 @@ def article_list(request, page=0, paginate_by=20, **kwargs):
 
     return list_detail.object_list(
         request,
-        queryset = Article.get_published(),
+        queryset = Article.objects.published(),
         paginate_by = paginate_by,
         page = page,
         **kwargs
@@ -28,7 +28,7 @@ def article_archive_year(request, year, **kwargs):
         request,
         year = year,
         date_field = 'pub_date',
-        queryset = Article.get_published(),
+        queryset = Article.objects.published(),
         make_object_list = True,
         **kwargs
     )
@@ -42,7 +42,7 @@ def article_archive_month(request, year, month, **kwargs):
         month = month,
         month_format='%m',
         date_field = 'pub_date',
-        queryset = Article.get_published(),
+        queryset = Article.objects.published(),
         **kwargs
     )
 article_archive_month.__doc__ = date_based.archive_month.__doc__
@@ -56,7 +56,7 @@ def article_archive_day(request, year, month, day, **kwargs):
         day = day,
         month_format='%m',
         date_field = 'pub_date',
-        queryset = Article.get_published(),
+        queryset = Article.objects.published(),
         **kwargs
     )
 article_archive_day.__doc__ = date_based.archive_day.__doc__
