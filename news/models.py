@@ -42,13 +42,13 @@ class Article(models.Model):
     blurb = property(_get_blurb)
 
     @staticmethod
-    def get_latest(num):
-        key = create_cache_key(Article, field='latest', field_value=num)
+    def get_latest():
+        key = create_cache_key(Article, field='type', field_value='latest')
         articles = cache.get(key, None)
 
         if not articles:
             try:
-                articles = Article.objects.published().order_by('-pub_date')[:num]
+                articles = Article.objects.published().order_by('-pub_date')[:20]
                 cache.add(key, articles)
             except Article.DoesNotExist:
                 return None

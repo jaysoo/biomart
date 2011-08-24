@@ -13,7 +13,7 @@ class ArticlesFeed(Feed):
         return reverse('news_index')
 
     def items(self):
-        return Article.get_published()
+        return Article.get_latest()
 
     def item_pubdate(self, obj):
         return obj.pub_date
