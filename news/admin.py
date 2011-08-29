@@ -15,7 +15,7 @@ class ArticleAdmin(admin.ModelAdmin):
     actions = [make_published]
 
     class Media: 
-        js = ('%s/tiny_mce/tiny_mce.js' % settings.STATIC_URL, '%s/filebrowser/js/TinyMCEAdmin.js' % settings.STATIC_URL,) 
+        js = ('%s/tiny_mce/tiny_mce.js' % settings.STATIC_URL, '%s/js/TinyMCEAdmin.js' % settings.STATIC_URL,) 
 
 admin.site.register(Article, ArticleAdmin)
 
