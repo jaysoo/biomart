@@ -1,11 +1,4 @@
 BioMart website (biomart.org)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> core settings
->>>>>>> trunk
 =============================
 
 Both the Django project and default Apache configuration files
