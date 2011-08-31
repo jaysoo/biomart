@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib.flatpages.models import FlatPage
 from django.contrib.flatpages.admin import FlatPageAdmin
 from django import forms
+import time
 
 class NavItemInlineForm(forms.ModelForm):
     class Meta:
@@ -33,8 +34,12 @@ class SettingsAdmin(admin.ModelAdmin):
 admin.site.register(Settings, SettingsAdmin)
 
 class FlatpageAdmin(FlatPageAdmin): 
-    class Media: 
-        js = ('%stiny_mce/tiny_mce.js' % settings.STATIC_URL, '%sjs/TinyMCEAdmin.js' % settings.STATIC_URL,) 
+    class Media:
+        js = (
+            '%s/tiny_mce/tiny_mce.js' % settings.STATIC_URL,
+            '%s/js/TinyMCEAdmin.js?d=%s' % ( settings.STATIC_URL, int(time.time() * 1000) ),
+        )
+
 
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, FlatpageAdmin)

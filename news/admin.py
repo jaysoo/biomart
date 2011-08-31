@@ -1,6 +1,7 @@
 from models import Article
 from django.contrib import admin
 from django.conf import settings
+import time
 
 def make_published(modeladmin, request, queryset):
     queryset.update(status=2)
@@ -14,8 +15,11 @@ class ArticleAdmin(admin.ModelAdmin):
     date_hierarchy = 'pub_date'
     actions = [make_published]
 
-    class Media: 
-        js = ('%s/tiny_mce/tiny_mce.js' % settings.STATIC_URL, '%s/js/TinyMCEAdmin.js' % settings.STATIC_URL,) 
+    class Media:
+        js = (
+            '%s/tiny_mce/tiny_mce.js' % settings.STATIC_URL,
+            '%s/js/TinyMCEAdmin.js?d=%s' % ( settings.STATIC_URL, int(time.time() * 1000) ),
+        )
 
 admin.site.register(Article, ArticleAdmin)
 
