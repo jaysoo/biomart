@@ -1,0 +1,9 @@
+{% load core %}
+{% get_navigation top as navigation %}
+
+<ul id="nav"> 
+{% for item in navigation.get_items %}
+  <li class="{% firstof item.url|slugify "home" %}"><a href="{{ item.url }}">{{ item.label }}</a></li>
+{% endfor %}
+</ul> 
+

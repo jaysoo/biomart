@@ -1,0 +1,12 @@
+{% extends "news/news_base.html" %}
+{% block head_title %}Articles for {{ month|date:"F Y" }} &mdash; {{ block.super}}{% endblock %}
+
+{% block content %}
+  <h2>Articles for {{ month|date:"F Y" }}</h2>
+  {% include "news/_articles.html" %}
+{% endblock %}
+
+{% block body_end %}
+  {% include "news/_disqus_count.html" %}
+{% endblock %}
+

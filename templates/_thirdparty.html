@@ -1,0 +1,11 @@
+{% load core %}
+{% get_thirdpartysoftware as software_items %}
+
+<section id="thirdparty" class="col-a">
+  <h4>Third party software with BioMart plugin</h4>
+  <ul>
+  {% for software in software_items %}
+    <li><a href="{{ software.url }}">{{ software.name }}</a></li>
+  {% endfor %}
+  </ul>
+</section>

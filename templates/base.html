@@ -1,0 +1,108 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{% block head_title %}{{ SITE_TITLE }}{% endblock %}</title>
+  <meta name="description" content="{{ SITE_TAGLINE }}">
+  <meta name="author" content="Jack Hsu">
+  <link href="/news/feed/" rel="service.post" title="Atom" type="application/atom+xml"/> 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css?v=2">
+  <script src="{{ STATIC_URL }}js/libs/modernizr-1.7.min.js"></script>
+  <script src="{{ STATIC_URL }}js/libs/respond.min.js"></script>
+  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body id="body-{% block body_id %}home{% endblock %}">
+  <header>
+    <div class="container">
+      <nav role="navigation">
+        {% include "_nav.html" %}
+      </nav>
+      <hgroup>
+        <a href="{% url home %}">
+          <h1 id="main-logo" class="ir">{{ SITE_TITLE }}</h1>
+        </a>
+        <h2 id="tagline">{{ SITE_TAGLINE }}</h2>
+      </hgroup>
+    </div>
+  </header>
+  <div id="main" role="main">
+    {% block container %}
+    <div class="container clearfix">
+      <div class="content col-a">
+        {% block content %}{% endblock %}
+      </div>
+      <aside class="col-b">
+        {% block aside %}
+          {% include "news/_latest_news.html" %}
+          <p class="more">
+            <a href="/news/">See more news &raquo;</a>
+          </p>
+        {% endblock %}
+      </aside>
+    </div>
+    {% endblock %}
+  </div>
+  <footer class="clearfix">
+    <section id="external">
+      <div class="container clearfix">
+        {% include "_thirdparty.html" %}
+        {% include "_collaborators.html" %}
+      </div>
+    </section>
+    <section id="copyright">
+      <div class="container">
+        Copyright &copy; {% now "Y" %} Ontario Institute for Cancer Reseach
+      </div>
+    </section>
+  </footer>
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+  <script>window.jQuery || document.write("<script src='{{ STATIC_URL }}js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script src="{{ STATIC_URL }}js/plugins.js"></script>
+  <script src="{{ STATIC_URL }}js/script.js"></script>
+  <!-- end scripts-->
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg");</script>
+  <![endif]-->
+
+  <!--script>
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]]; // Change UA-XXXXX-X to be your site's ID 
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script-->
+
+  {% block body_end %}
+  <script>
+    $(function() {
+      $('#nav')
+        .delegate('li', 'mouseover', function() {
+          $(this).siblings().each(function() {
+            $(this).find('a').css('color', 'white');
+          });
+        })
+        .delegate('li', 'mouseout', function() {
+          $(this).siblings().each(function() {
+            $(this).find('a').css('color', '');
+          });
+        });
+    });
+  </script>
+  {% endblock %}
+</body>
+</html>

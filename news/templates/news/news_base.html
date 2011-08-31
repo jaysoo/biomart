@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block head_title %}News &mdash; {{ block.super }}{% endblock %}
+
+{% block body_id %}news{% endblock %}
+
+{% block aside %}
+  {% include "news/_latest_news.html" %}
+  {% include "news/_archive.html" %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "news/news_base.html" %}
+
+{% block head_title %}Articles for {{ month|date:"Y" }} &mdash; {{ block.super}}{% endblock %}
+
+{% block content %}  
+  <h2>News archives for {{ year }}</h2>
+  <ul class="link_list">
+    {% for month in date_list %}
+      <li><a href="{% url news_index %}{{ year }}/{{ month|date:"m" }}/">{{ month|date:"F" }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

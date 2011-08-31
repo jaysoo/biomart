@@ -1,0 +1,8 @@
+*.pyc
+*.db
+*.swo
+*.swp
+static
+media
+biomart*.json
+local_settings.py

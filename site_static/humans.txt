@@ -1,0 +1,57 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+	Web Developer: Jack Hsu
+	Site: http://jaysoo.ca/
+	Twitter: @jay_soo
+	Location: Toronto, Canada
+
+	Software Developer: Joachim Baran 
+	Location: Toronto, Canada
+
+	Software Developer: Anthony Cros 
+	Location: Toronto, Canada
+
+	Software Developer: Jonathan Guberman 
+	Location: Toronto, Canada
+
+	Software Developer: Yong Liang 
+	Location: Toronto, Canada
+
+	Software Developer: Long Yao 
+	Location: Toronto, Canada
+
+	Database/Application Programmer: Junjun Zhang 
+	Location: Toronto, Canada
+
+
+/* THANKS */
+	Syed Haider 
+	Arek Kasprzyk
+    Benoit Ballester (Ensembl)
+    Richard Holland (Ensembl)
+    Andreas Kahari (Ensembl)
+    Craig Melsopp (Ensembl)
+    Damian Smedley (Ensembl)
+    Arne Stabenau (Ensembl)
+    Asif Kibria (EBI)
+    Gulam Patel (EBI)
+    Stephen Robinson (EBI)
+    Katerina Tzouvara (EBI)
+    Will Spooner (CSHL)
+    Gudmundur Thorisson (CSHL)
+    Igor Antoshechkin (Caltech)
+    Darin London (Duke University)
+    Don Gilbert (Indiana University)
+    Steffen Durinck (NCI NIH)
+    Eric Just (Northwestern University)
+    Paul Donlon (Unilever)
+
+
+/* SITE */
+	Standards: HTML5, CSS3
+	Components: Modernizr, jQuery
+	Software: Django
+	  

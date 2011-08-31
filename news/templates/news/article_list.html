@@ -1,0 +1,27 @@
+{% extends "news/news_base.html" %}
+
+{% block content %}
+  <h2>News</h2>
+  {% include "news/_articles.html" %}
+  
+  {% if is_paginated %}
+  <p class="pagination">
+    {% if has_next %}
+      <a class="older" href="?page={{ next }}">Older</a>
+    {% endif %}
+    {% if has_next and has_previous %} | {% endif %}
+    {% if has_previous %}
+      <a class="newer" href="?page={{ previous }}">Newer</a>
+    {% endif %}
+  </p>
+  {% endif %}
+{% endblock %}
+
+{% block aside %}
+  {% include "news/_archive.html" %}
+{% endblock %}
+
+{% block body_end %}
+  {% include "news/_disqus_count.html" %}
+{% endblock %}
+
