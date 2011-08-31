@@ -1,9 +1,4 @@
 BioMart website (biomart.org)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> core settings
 =============================
 
 Both the Django project and default Apache configuration files
@@ -63,28 +58,73 @@ To install these packages, run this command:
     pip install pil mysql-python python-memcached gunicorn django django-grappelli django-filebrowser south
 
 
-Checkout from svn and deploy
+Checkout from SVN and deploy
 ----------------------------
 
 1. Checkout trunk from SVN
 
-    svn co https://code.oicr.on.ca/svn/dcc_dev/biomart_django/trunk biomart_django_trunk
+        svn co https://code.oicr.on.ca/svn/dcc_dev/biomart_django/trunk biomart_django_trunk
 
 2. Sync data (follow instructions, and make sure you create a superuser)
 
-    cd biomart_django_trunk/biomart
-    python manage.py syncdb
+        cd biomart_django_trunk/biomart
+        python manage.py syncdb
 
 3. Migrate models
 
-    python manage.py migrate 
+        python manage.py migrate 
 
-4. Run Gunicorn
+4. Load some fixtures
 
-    gunicorn_django -c [svn_trunk]/biomart/gunicorn_config.py [svn_trunk]/biomart/settings.py
+        python manage.py loaddata fixtures/core.json fixtures/flatpages.json
 
-5. Load some fixtures
+5. Run Gunicorn
+
+        gunicorn_django -c [svn_trunk]/biomart/gunicorn_config.py [svn_trunk]/biomart/settings.py
 
 You should now have a dummy server running on http://localhost:9997. The admin URL is 
 http://localhost:9997/admin (login using the superuser account you created earlier).
+
+You can stop the Gunicorn daemon processes by killing the master process. The PID file should 
+created under the directory in which you ran the `gunicorn_django` command.
+
+    kill `cat gunicorn.pid`
+
+
+Local settings
+--------------
+
+Database connection and memcached info should go into a file called `local_settings.py`, in the
+same folder as settings.py. We don't include these settings in the SVN repo because they differ
+between environments.
+
+If you are using MySQL, you will need a setting similar to the below:
+
+    # Make sure all settings are correct below!
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': 'biomart',                      # Or path to database file if using sqlite3.
+            'USER': 'username',                      # Not used with sqlite3.
+            'PASSWORD': 'password',                  # Not used with sqlite3.
+            'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
+            'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
+        }
+    }
+
+For memcached settings, use the following:
+
+    # This assumes default memcached port of 11211 running on localhost
+    # If this is not correct, please change it!
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+            'LOCATION': '127.0.0.1:11211',
+        }
+    }
+
+Please see the Django documentation for more information (https://docs.djangoproject.com/en/1.3/topics/settings/).
+
+Relaunch the Gunicorn processes to load the new settings. You will need to redo steps 2-4 from the previous 
+section in order to load the data into a fresh database.
 
