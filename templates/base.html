@@ -21,11 +21,11 @@
   <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 
-<body id="{% block body_id %}home{% endblock %}">
+<body id="body-{% block body_id %}home{% endblock %}">
   <header>
     <div class="container">
       <nav role="navigation">
-        {% include "nav.html" %}
+        {% include "_nav.html" %}
       </nav>
       <hgroup>
         <a href="{% url home %}">
@@ -55,8 +55,8 @@
   <footer class="clearfix">
     <section id="external">
       <div class="container clearfix">
-        {% include "thirdparty.html" %}
-        {% include "collaborators.html" %}
+        {% include "_thirdparty.html" %}
+        {% include "_collaborators.html" %}
       </div>
     </section>
     <section id="copyright">

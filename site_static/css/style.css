@@ -194,6 +194,15 @@ nav {
     color: #8ec54d;
 }
 
+/* For highlighting navigation items */
+#body-home #nav .home a { color: #8ec54d; }
+#body-about #nav .about a { color: #8ec54d; }
+#body-centralportal #nav .centralportal a { color: #8ec54d; }
+#body-download #nav .download a { color: #8ec54d; }
+#body-documentation #nav .documentation a { color: #8ec54d; }
+#body-news #nav .news a { color: #8ec54d; }
+#body-support #nav .support a { color: #8ec54d; }
+
 #main {
     padding: 10px 0;
     line-height: 1.8em;
@@ -312,26 +321,26 @@ footer ul {
 }
 
 /* News */
-#news .article-list article {
+#body-news .article-list article {
     border-bottom: 1px dotted #ccc;
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
-#news .article-list article:last-child {
+#body-news .article-list article:last-child {
     border-bottom: none;
 }
-#news .article-list h3 {
+#body-news .article-list h3 {
     font-size: 18px;
     font-weight: normal;
     margin-bottom: 0;
 }
-#news .article-list h3 a {
+#body-news .article-list h3 a {
     text-decoration: none;
 }
-#news article .time {
+#body-news article .time {
     margin-top: 0;
 }
-#news article time {
+#body-news article time {
     color: #999;
 }
 #disqus_thread {
@@ -339,12 +348,12 @@ footer ul {
     padding-top: 10px;
     border-top: 1px solid #ccc;
 }
-#news .article-comments-link:before {
+#body-news .article-comments-link:before {
     font-size: 20px;
     color: #999;
     content: "{";
 }
-#news .article-comments-link:after {
+#body-news .article-comments-link:after {
     font-size: 20px;
     color: #999;
     content: "}";

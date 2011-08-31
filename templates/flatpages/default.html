@@ -3,7 +3,7 @@
 
 {% block head_title %}{{ flatpage.title }} &mdash; {{ block.super }}{% endblock %}
 
-{% block body_id %}flatpage{% endblock %}
+{% block body_id %}{{ flatpage.url|slugify }}{% endblock %}
 
 {% block content %}
     <h2 class="top-header">{{ flatpage.title }}</h2>
