@@ -7,7 +7,9 @@
     <li>
       <time datetime="{{ article.pub_date|date:"c" }}" pubdate>{{ article.pub_date|naturalday }}</time>
       <span class="headline"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></span>
-      <p class="blurb">{{ article.blurb|linebreaks|safe}}</p>
+      <div class="blurb">
+        {{ article.blurb|linebreaks|safe}}
+      </div>
     </li>
     {% endfor %}
   </ul>
