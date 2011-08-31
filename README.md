@@ -1,6 +1,7 @@
 BioMart website (biomart.org)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> core settings
 =============================
@@ -87,9 +88,3 @@ Checkout from svn and deploy
 You should now have a dummy server running on http://localhost:9997. The admin URL is 
 http://localhost:9997/admin (login using the superuser account you created earlier).
 
-
-<<<<<<< HEAD
-=======
->>>>>>> readme
-=======
->>>>>>> core settings
