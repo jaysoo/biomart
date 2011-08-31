@@ -22,7 +22,7 @@ function CustomFileBrowser(field_name, url, type, win) {
 
 tinyMCE.init({
     mode: "exact",
-    elements: "id_body,id_content",
+    elements: "id_body,id_content,id_project_overview",
     theme: "advanced",
     language: "en",
     skin: "o2k7",

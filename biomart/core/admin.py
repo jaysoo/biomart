@@ -29,7 +29,11 @@ admin.site.register(ThirdPartySoftware, ThirdPartySoftwareAdmin)
 
 class SettingsAdmin(admin.ModelAdmin): 
     class Media: 
-        js = ('%stiny_mce/tiny_mce.js' % settings.STATIC_URL, '%sjs/TinyMCEAdmin.js' % settings.STATIC_URL,) 
+        js = (
+            '%s/tiny_mce/tiny_mce.js' % settings.STATIC_URL,
+            '%s/js/TinyMCEAdmin.js?d=%s' % ( settings.STATIC_URL, int(time.time() * 1000) ),
+        )
+
 
 admin.site.register(Settings, SettingsAdmin)
 
