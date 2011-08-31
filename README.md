@@ -128,3 +128,22 @@ Please see the Django documentation for more information (https://docs.djangopro
 Relaunch the Gunicorn processes to load the new settings. You will need to redo steps 2-4 from the previous 
 section in order to load the data into a fresh database.
 
+
+Serving behind HTTP server
+--------------------------
+
+Note that static files are not served by the Django server (unless `DEBUG=True` in the settings). The static files
+need to be served by an HTTP server (Apache or nginx). Default Apache configs are under `[svn_trunk]/apache/conf/httpd.conf`.
+
+Please make sure you update all the paths in `httpd.conf` so that they point actual paths on the filesystem.
+
+To run an Apache server with the config file, this command:
+
+    apache2 -d [svn_trunk]/apache2 -f conf/httpd.conf -k start
+
+
+If `apache2` is not on the PATH, use the full path.
+
+e.g.
+
+    /usr/sbin/apache2 -d /u/jhsu/code/biomart.org/apache2 -f conf/httpd.conf -k start
