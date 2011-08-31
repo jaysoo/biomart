@@ -21,7 +21,8 @@ function CustomFileBrowser(field_name, url, type, win) {
 
 
 tinyMCE.init({
-    mode: "textareas",
+    mode: "exact",
+    elements: "id_body,id_content",
     theme: "advanced",
     language: "en",
     skin: "o2k7",
@@ -39,8 +40,8 @@ tinyMCE.init({
     theme_advanced_buttons3: "",
     theme_advanced_path: false,
     theme_advanced_blockformats: "p,h2,h3,h4,h5,h6,blockquote,pre",
-    width: '700',
-    height: '200',
+    width: '750',
+    height: '500',
     plugins: "advimage,advlink,fullscreen,visualchars,paste,media,template,searchreplace",
     advimage_styles: "Linksbündig neben Text=img_left;Rechtsbündig neben Text=img_right;Eigener Block=img_block",
     advlink_styles: "internal (sehmaschine.net)=internal;external (link to an external site)=external",

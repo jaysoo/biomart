@@ -1,5 +1,5 @@
 {% load news humanize %}
-{% get_latest_articles 5 as articles %}
+{% get_latest_articles 3 as articles %}
 <div id="latest-news">
   <h3>Latest News</h3>
   <ul>
@@ -7,7 +7,7 @@
     <li>
       <time datetime="{{ article.pub_date|date:"c" }}" pubdate>{{ article.pub_date|naturalday }}</time>
       <span class="headline"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></span>
-      <p class="blurb">{{ article.body|truncatewords_html:15|striptags|safe }}</p>
+      <p class="blurb">{{ article.blurb|safe }}</p>
     </li>
     {% endfor %}
   </ul>
