@@ -87,6 +87,22 @@
     s.parentNode.insertBefore(g,s)}(document,"script"));
   </script-->
 
-  {% block body_end %}{% endblock %}
+  {% block body_end %}
+  <script>
+    $(function() {
+      $('#nav')
+        .delegate('li', 'mouseover', function() {
+          $(this).siblings().each(function() {
+            $(this).find('a').css('color', 'white');
+          });
+        })
+        .delegate('li', 'mouseout', function() {
+          $(this).siblings().each(function() {
+            $(this).find('a').css('color', '');
+          });
+        });
+    });
+  </script>
+  {% endblock %}
 </body>
 </html>
